@@ -18,7 +18,7 @@ Deep Reinforcement Learning Hands-On - Second Edition (Packt, 2020)
 
 ## Contents
 
-- Week 1 (9/4)
+- Week 1 (9/8)
   - Review about the Basic Knowledge of Reinforcement Learning 
     - MDP (Markov Decision Process)
     - The Bellman Equation
@@ -27,51 +27,51 @@ Deep Reinforcement Learning Hands-On - Second Edition (Packt, 2020)
     - Policy Gradient
     - Deep Q-Network (DQN)
     - Actor-Critic
-- Week 2 (9/11)
+- Week 2 (9/13)
   - DQN Extensions #1
     - N-step DQN
     - Double DQN
     - Noisy Network
     - Prioritized Experience Replay (PER)
-- Week 3 (9/25)
+- Week 3 (9/27)
   - DQN Extensions #2
     - Dueling DQN
     - Catergorical DQN
     - Rainbow
-- Week 4 (10/2)
+- Week 4 (10/4)
   - Actor-Critic Extensions
     - Advantage Actor-Critic (A2C)
     - Asynchronous Advantage Actor-Critic (A3C)
       - Data Parallelism
       - Gradient Parallelism
-- Week 5 (10/30)
+- Week 5 (11/1)
   - Example #1: Stock Trading
-- Week 6 (11/6)
+- Week 6 (11/8)
   - Continuous Action Space
     - Advantage Actor-Critic (A2C)
     - Deep Deterministic Policy Gradient (DDPG)
     - Distributed Distributional DDPG (D4PG)
-- Week 7 (11/13)
+- Week 7 (11/15)
   - Trust Regions #1
     - Trust Region Policy Optimization (TRPO)
     - Proximal Policy Optimization (PPO)
-- Week 8 (11/20)
+- Week 8 (11/22)
   - Trust Regions #2
     - Averaged Stochastic K-Timestep Trust Region (ACKTR)
     - Soft Actor-Critic (SAC)
-- Week 9 (1/8)
+- Week 9 (1/3)
   - Example #2: Robotics
-- Week 10 (1/15)
+- Week 10 (1/10)
   - Imagination
     - Interpretable Inference for Autonomous Agents (I2A)
-- Week 11 (1/22)
+- Week 11 (1/17)
   - Multi-Agent RL
     - Multi-Agent Deep Deterministic Policy Gradient (MADDPG)
     - Multi-Agent Twin Delayed Deep Deterministic Policy Gradient (MATD3)
     - Multi-Agent Proximal Policy Optimization (MAPPO)
     - Multi-Agent Soft Actor-Critic (MASAC)
     - Monotonic Value Function Factorisation for Deep Multi-Agent Reinforcement Learning (QMIX)
-- Week 12 (1/29)
+- Week 12 (1/24)
   - Example #3: Rubik's Cube
 
 ## How To Contribute
