@@ -36,7 +36,7 @@ Deep Reinforcement Learning Hands-On - Second Edition (Packt, 2020)
 - Week 3 (9/27)
   - DQN Extensions #2
     - Dueling DQN
-    - Catergorical DQN
+    - Categorical DQN
     - Rainbow
 - Week 4 (10/4)
   - Actor-Critic Extensions
@@ -70,7 +70,7 @@ Deep Reinforcement Learning Hands-On - Second Edition (Packt, 2020)
     - Multi-Agent Twin Delayed Deep Deterministic Policy Gradient (MATD3)
     - Multi-Agent Proximal Policy Optimization (MAPPO)
     - Multi-Agent Soft Actor-Critic (MASAC)
-    - Monotonic Value Function Factorisation for Deep Multi-Agent Reinforcement Learning (QMIX)
+    - Monotonic Value Function Factorization for Deep Multi-Agent Reinforcement Learning (QMIX)
 - Week 12 (1/24)
   - Example #3: Rubik's Cube
 
