@@ -18,7 +18,7 @@ Deep Reinforcement Learning Hands-On - Second Edition (Packt, 2020)
 
 ## Contents
 
-- Week 1 (9/8)
+- Week 1 (9/8) [[Lecture]](./1%20-%20Lecture/210908%20-%20RL%20Boot%20Camp%2C%20Week%201.pdf)
   - Review about the Basic Knowledge of Reinforcement Learning 
     - MDP (Markov Decision Process)
     - The Bellman Equation
