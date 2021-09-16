@@ -27,13 +27,13 @@ Deep Reinforcement Learning Hands-On - Second Edition (Packt, 2020)
     - Policy Gradient
     - Deep Q-Network (DQN)
     - Actor-Critic
-- Week 2 (9/13)
+- Week 2 (9/24)
   - DQN Extensions #1
     - N-step DQN
     - Double DQN
     - Noisy Network
     - Prioritized Experience Replay (PER)
-- Week 3 (9/27)
+- Week 3 (9/29)
   - DQN Extensions #2
     - Dueling DQN
     - Categorical DQN
