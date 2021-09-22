@@ -113,3 +113,17 @@ def batch_generator(buffer: ptan.experience.ExperienceReplayBuffer, initial: int
     while True:
         buffer.populate(1)
         yield buffer.sample(batch_size)
+
+
+@torch.no_grad()
+def calc_values_of_states(states, net, device="cpu"):
+    mean_vals = []
+
+    for batch in np.array_split(states, 64):
+        states_v = torch.tensor(batch).to(device)
+        action_values_v = net(states_v)
+        best_action_values_v = action_values_v.max(1)[0]
+
+        mean_vals.append(best_action_values_v.mean().item())
+
+    return np.mean(mean_vals)
