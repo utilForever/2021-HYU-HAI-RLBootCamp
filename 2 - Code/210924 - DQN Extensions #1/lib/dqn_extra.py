@@ -8,6 +8,9 @@ from torch.nn import functional as f
 
 import numpy as np
 
+BETA_START = 0.4
+BETA_FRAMES = 100000
+
 
 class NoisyLinear(nn.Linear):
     def __init__(self, in_features, out_features, sigma_init=0.017, bias=True):
@@ -94,3 +97,58 @@ class NoisyDQN(nn.Module):
 
     def _forward_unimplemented(self, *input_forward: Any) -> None:
         pass
+
+
+class PrioritizedReplayBuffer:
+    def __init__(self, exp_source, buf_size, prob_alpha=0.6):
+        self.exp_source_iter = iter(exp_source)
+        self.prob_alpha = prob_alpha
+        self.capacity = buf_size
+        self.pos = 0
+        self.buffer = []
+        self.priorities = np.zeros((buf_size,), dtype=np.float32)
+        self.beta = BETA_START
+
+    def update_beta(self, idx):
+        v = BETA_START + idx * (1.0 - BETA_START) / BETA_FRAMES
+        self.beta = min(1.0, v)
+
+        return self.beta
+
+    def __len__(self):
+        return len(self.buffer)
+
+    def populate(self, count):
+        max_priority = self.priorities.max(initial=1.0) if self.buffer else 1.0
+
+        for _ in range(count):
+            sample = next(self.exp_source_iter)
+
+            if len(self.buffer) < self.capacity:
+                self.buffer.append(sample)
+            else:
+                self.buffer[self.pos] = sample
+
+            self.priorities[self.pos] = max_priority
+            self.pos = (self.pos + 1) % self.capacity
+
+    def sample(self, batch_size):
+        if len(self.buffer) == self.capacity:
+            priorities = self.priorities
+        else:
+            priorities = self.priorities[:self.pos]
+
+        probabilities = priorities ** self.prob_alpha
+        probabilities /= probabilities.sum()
+
+        indices = np.random.choice(len(self.buffer), batch_size, p=probabilities)
+        samples = [self.buffer[idx] for idx in indices]
+        total = len(self.buffer)
+        weights = (total * probabilities[indices]) ** (-self.beta)
+        weights /= weights.max()
+
+        return samples, indices, np.array(weights, dtype=np.float32)
+
+    def update_priorities(self, batch_indices, batch_priorities):
+        for idx, priority in zip(batch_indices, batch_priorities):
+            self.priorities[idx] = priority
