@@ -27,7 +27,7 @@ Deep Reinforcement Learning Hands-On - Second Edition (Packt, 2020)
     - Policy Gradient
     - Deep Q-Network (DQN)
     - Actor-Critic
-- Week 2 (9/24)
+- Week 2 (9/24) [[Code]](./2%20-%20Code/210924%20-%20DQN%20Extensions%20%231)
   - DQN Extensions #1
     - N-step DQN
     - Double DQN
