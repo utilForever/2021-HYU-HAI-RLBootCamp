@@ -160,7 +160,7 @@ class PrioritizedReplayBuffer:
 
 
 class DuelingDQN(nn.Module):
-    def __init__(self, input_shape, n_actions):
+    def __init__(self, input_shape, num_actions):
         super(DuelingDQN, self).__init__()
 
         self.conv = nn.Sequential(
@@ -177,7 +177,7 @@ class DuelingDQN(nn.Module):
         self.fc_adv = nn.Sequential(
             nn.Linear(conv_out_size, 256),
             nn.ReLU(),
-            nn.Linear(256, n_actions)
+            nn.Linear(256, num_actions)
         )
         self.fc_val = nn.Sequential(
             nn.Linear(conv_out_size, 256),
@@ -247,7 +247,7 @@ def distr_projection(next_distr, rewards, dones, gamma):
 
 
 class CategoricalDQN(nn.Module):
-    def __init__(self, input_shape, n_actions):
+    def __init__(self, input_shape, num_actions):
         super(CategoricalDQN, self).__init__()
 
         self.conv = nn.Sequential(
@@ -263,7 +263,7 @@ class CategoricalDQN(nn.Module):
         self.fc = nn.Sequential(
             nn.Linear(conv_out_size, 512),
             nn.ReLU(),
-            nn.Linear(512, n_actions * N_ATOMS)
+            nn.Linear(512, num_actions * N_ATOMS)
         )
 
         sups = torch.arange(V_MIN, V_MAX + DELTA_Z, DELTA_Z)
