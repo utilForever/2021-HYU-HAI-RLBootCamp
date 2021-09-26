@@ -244,3 +244,52 @@ def distr_projection(next_distr, rewards, dones, gamma):
             proj_distr[ne_dones, u[ne_mask]] = (b_j - l)[ne_mask]
 
     return proj_distr
+
+
+class CategoricalDQN(nn.Module):
+    def __init__(self, input_shape, n_actions):
+        super(CategoricalDQN, self).__init__()
+
+        self.conv = nn.Sequential(
+            nn.Conv2d(input_shape[0], 32, kernel_size=8, stride=4),
+            nn.ReLU(),
+            nn.Conv2d(32, 64, kernel_size=4, stride=2),
+            nn.ReLU(),
+            nn.Conv2d(64, 64, kernel_size=3, stride=1),
+            nn.ReLU()
+        )
+
+        conv_out_size = self._get_conv_out(input_shape)
+        self.fc = nn.Sequential(
+            nn.Linear(conv_out_size, 512),
+            nn.ReLU(),
+            nn.Linear(512, n_actions * N_ATOMS)
+        )
+
+        sups = torch.arange(V_MIN, V_MAX + DELTA_Z, DELTA_Z)
+        self.register_buffer("supports", sups)
+        self.softmax = nn.Softmax(dim=1)
+
+    def _get_conv_out(self, shape):
+        o = self.conv(torch.zeros(1, *shape))
+        return int(np.prod(o.size()))
+
+    def forward(self, x):
+        batch_size = x.size()[0]
+        fx = x.float() / 256
+        conv_out = self.conv(fx).view(batch_size, -1)
+        fc_out = self.fc(conv_out)
+        return fc_out.view(batch_size, -1, N_ATOMS)
+
+    def both(self, x):
+        cat_out = self.forward(x)
+        probs = self.apply_softmax(cat_out)
+        weights = probs * self.supports
+        res = weights.sum(dim=2)
+        return cat_out, res
+
+    def qvals(self, x):
+        return self.both(x)[1]
+
+    def apply_softmax(self, t):
+        return self.softmax(t.view(-1, N_ATOMS)).view(t.size())
