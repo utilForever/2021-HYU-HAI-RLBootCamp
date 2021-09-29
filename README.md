@@ -33,7 +33,7 @@ Deep Reinforcement Learning Hands-On - Second Edition (Packt, 2020)
     - Double DQN
     - Noisy Network
     - Prioritized Experience Replay (PER)
-- Week 3 (9/29) [[Lecture]](./1%20-%20Lecture/210929%20-%20RL%20Boot%20Camp%2C%20Week%203.pdf)
+- Week 3 (9/29) [[Lecture]](./1%20-%20Lecture/210929%20-%20RL%20Boot%20Camp%2C%20Week%203.pdf) [[Code]](./2%20-%20Code/210929%20-%20DQN%20Extensions%20%232)
   - DQN Extensions #2
     - Dueling DQN
     - Categorical DQN
