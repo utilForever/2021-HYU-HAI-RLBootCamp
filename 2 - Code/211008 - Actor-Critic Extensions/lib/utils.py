@@ -5,6 +5,8 @@ import numpy as np
 import torch
 import torch.nn as nn
 
+from typing import Any
+
 
 class A2C(nn.Module):
     def __init__(self, input_shape, num_actions):
@@ -87,3 +89,35 @@ class RewardTracker:
             return True
 
         return False
+
+
+def unpack_batch(_batch, _net, last_val_gamma, _device='cpu'):
+    states = []
+    actions = []
+    rewards = []
+    not_done_idx = []
+    last_states = []
+
+    for idx, _exp in enumerate(_batch):
+        states.append(np.array(_exp.state, copy=False))
+        actions.append(int(_exp.action))
+        rewards.append(_exp.reward)
+
+        if _exp.last_state is not None:
+            not_done_idx.append(idx)
+            last_states.append(np.array(_exp.last_state, copy=False))
+
+    _states_v = torch.FloatTensor(np.array(states, copy=False)).to(_device)
+    _actions_t = torch.LongTensor(actions).to(_device)
+
+    rewards_np = np.array(rewards, dtype=np.float32)
+
+    if not_done_idx:
+        last_states_v = torch.FloatTensor(np.array(last_states, copy=False)).to(_device)
+        last_vals_v = _net(last_states_v)[1]
+        last_vals_np = last_vals_v.data.cpu().numpy()[:, 0]
+        rewards_np[not_done_idx] += last_val_gamma * last_vals_np
+
+    ref_vals_v = torch.FloatTensor(rewards_np).to(_device)
+
+    return _states_v, _actions_t, ref_vals_v
