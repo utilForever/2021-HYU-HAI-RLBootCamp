@@ -38,7 +38,7 @@ Deep Reinforcement Learning Hands-On - Second Edition (Packt, 2020)
     - Dueling DQN
     - Categorical DQN
     - Rainbow
-- Week 4 (10/6)
+- Week 4 (10/8)
   - Actor-Critic Extensions
     - Advantage Actor-Critic (A2C)
     - Asynchronous Advantage Actor-Critic (A3C)
