@@ -38,40 +38,38 @@ Deep Reinforcement Learning Hands-On - Second Edition (Packt, 2020)
     - Dueling DQN
     - Categorical DQN
     - Rainbow
-- Week 4 (10/8) [[Lecture]](./1%20-%20Lecture/211008%20-%20RL%20Boot%20Camp%2C%20Week%204.pdf) [[Code]](./2%20-%20Code/211008%20-%20Actor-Critic%20Extensions)
+- Week 4 (11/1) [[Lecture]](./1%20-%20Lecture/211008%20-%20RL%20Boot%20Camp%2C%20Week%204.pdf) [[Code]](./2%20-%20Code/211008%20-%20Actor-Critic%20Extensions)
   - Actor-Critic Extensions
     - Advantage Actor-Critic (A2C)
     - Asynchronous Advantage Actor-Critic (A3C)
       - Data Parallelism
       - Gradient Parallelism
-- Week 5 (11/1)
-  - Example #1: Stock Trading
-- Week 6 (11/8)
+- Week 5 (11/8)
   - Continuous Action Space
     - Advantage Actor-Critic (A2C)
     - Deep Deterministic Policy Gradient (DDPG)
     - Distributed Distributional DDPG (D4PG)
-- Week 7 (11/15)
+- Week 6 (11/15)
   - Trust Regions #1
     - Trust Region Policy Optimization (TRPO)
     - Proximal Policy Optimization (PPO)
-- Week 8 (11/22)
+- Week 7 (11/22)
   - Trust Regions #2
     - Averaged Stochastic K-Timestep Trust Region (ACKTR)
     - Soft Actor-Critic (SAC)
-- Week 9 (1/3)
+- Week 8 (1/3)
   - Example #2: Robotics
-- Week 10 (1/10)
+- Week 9 (1/10)
   - Imagination
     - Interpretable Inference for Autonomous Agents (I2A)
-- Week 11 (1/17)
+- Week 10 (1/17)
   - Multi-Agent RL
     - Multi-Agent Deep Deterministic Policy Gradient (MADDPG)
     - Multi-Agent Twin Delayed Deep Deterministic Policy Gradient (MATD3)
     - Multi-Agent Proximal Policy Optimization (MAPPO)
     - Multi-Agent Soft Actor-Critic (MASAC)
     - Monotonic Value Function Factorization for Deep Multi-Agent Reinforcement Learning (QMIX)
-- Week 12 (1/24)
+- Week 11 (1/24)
   - Example #3: Rubik's Cube
 
 ## How To Contribute
