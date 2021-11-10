@@ -44,7 +44,7 @@ Deep Reinforcement Learning Hands-On - Second Edition (Packt, 2020)
     - Asynchronous Advantage Actor-Critic (A3C)
       - Data Parallelism
       - Gradient Parallelism
-- Week 5 (11/8)
+- Week 5 (11/11)
   - Continuous Action Space
     - Advantage Actor-Critic (A2C)
     - Deep Deterministic Policy Gradient (DDPG)
