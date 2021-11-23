@@ -52,25 +52,26 @@ Deep Reinforcement Learning Hands-On - Second Edition (Packt, 2020)
 - Week 6 (11/24)
   - Trust Regions #1
     - Trust Region Policy Optimization (TRPO)
-    - Proximal Policy Optimization (PPO)
 - Week 7 (12/1)
   - Trust Regions #2
+    - Proximal Policy Optimization (PPO)
+- Week 8 (1/3)
+  - Trust Regions #3
     - Averaged Stochastic K-Timestep Trust Region (ACKTR)
     - Soft Actor-Critic (SAC)
-- Week 8 (1/3)
-  - Example #2: Robotics
 - Week 9 (1/10)
   - Imagination
     - Interpretable Inference for Autonomous Agents (I2A)
 - Week 10 (1/17)
-  - Multi-Agent RL
+  - Multi-Agent RL #1
     - Multi-Agent Deep Deterministic Policy Gradient (MADDPG)
     - Multi-Agent Twin Delayed Deep Deterministic Policy Gradient (MATD3)
     - Multi-Agent Proximal Policy Optimization (MAPPO)
     - Multi-Agent Soft Actor-Critic (MASAC)
-    - Monotonic Value Function Factorization for Deep Multi-Agent Reinforcement Learning (QMIX)
 - Week 11 (1/24)
-  - Example #3: Rubik's Cube
+  - Multi-Agent RL #2
+    - Counterfactual Multi-Agent Policy Gradients (COMA)
+    - Monotonic Value Function Factorization for Deep Multi-Agent Reinforcement Learning (QMIX)
 
 ## How To Contribute
 
