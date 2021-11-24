@@ -49,7 +49,7 @@ Deep Reinforcement Learning Hands-On - Second Edition (Packt, 2020)
     - Advantage Actor-Critic (A2C)
     - Deep Deterministic Policy Gradient (DDPG)
     - Distributed Distributional DDPG (D4PG)
-- Week 6 (11/24)
+- Week 6 (11/24) [[Lecture]](./1%20-%20Lecture/211124%20-%20RL%20Boot%20Camp%2C%20Week%206.pdf)
   - Trust Regions #1
     - Trust Region Policy Optimization (TRPO)
 - Week 7 (12/1)
