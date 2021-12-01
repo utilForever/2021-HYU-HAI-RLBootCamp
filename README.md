@@ -52,7 +52,7 @@ Deep Reinforcement Learning Hands-On - Second Edition (Packt, 2020)
 - Week 6 (11/24) [[Lecture]](./1%20-%20Lecture/211124%20-%20RL%20Boot%20Camp%2C%20Week%206.pdf)
   - Trust Regions #1
     - Trust Region Policy Optimization (TRPO)
-- Week 7 (12/1)
+- Week 7 (12/1) [[Lecture]](./1%20-%20Lecture/211201%20-%20RL%20Boot%20Camp%2C%20Week%207.pdf)
   - Trust Regions #2
     - Proximal Policy Optimization (PPO)
 - Week 8 (1/3)
